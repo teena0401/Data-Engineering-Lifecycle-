@@ -56,5 +56,11 @@ Tools/Software: MongoDB Server, MongoDB Command Line Backup Tools
 ##### 2.1.6 Write a query to find the number of smartphone with screen size of 6 inches 
 ##### 2.1.7 Export the 3 fields from the 'electronics' collection into a file named eletronics.csv. 
 
+## Module 3: Data Warehousing 
+
+- design the schema for a data warehouse based on the schema 
+of the OLTP and NoSQL databases. You’ll then create the schema and load the data into fact and dimension tables, automate the daily incremental data insertion into the data warehouse, and create Cubes and Rollups to make the reporting easier.
+
+
 
 
