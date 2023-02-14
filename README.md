@@ -64,15 +64,22 @@ create a bash script and using ```mysqldump``` command to export data
 Tools/Software: MongoDB Server, MongoDB Command Line Backup Tools 
 
 ### 2.1 Working with MongoDB  
+
+
 ##### 2.1.1 Import 'catalog.json' into mongodb server in a database named 'catalog' and collection named 'eletronics'  
+``` mongoimport -u root -p xxxxxx --authenticationDatabase admin -db xxx --collection xxx -- file xxx.json```  
 ##### 2.1.2 List out all the databases  
+``` show dbs```  
 ##### 2.1.3 List out all the collections in the database  
+``` show collections ```  
 ##### 2.1.4 Create an index on the field  
+``` db.collection.CreateIndex({"field:1}) ```  
 ##### 2.1.5 Write a query to find the count of laptops   
+``` db.collection.count({type:"laptop"})```  
 ##### 2.1.6 Write a query to find the number of smartphone with screen size of 6 inches   
 ##### 2.1.7 Export the 3 fields from the 'electronics' collection into a file named eletronics.csv. 
 
-## Module 3 Part 1: Data Warehousing
+## Module 3 Part 1: Data Warehousing Reporting
 
 Tools/Software: ERD Design Tool of pgAdmin , PostgreSQL Database Server
 
@@ -90,20 +97,45 @@ of the OLTP and NoSQL databases. You’ll then create the schema and load the da
 ### 3.2: Create the schema
 #### 3.2.1: Create the schema
 
-## Module 3 Part 2: Data Warehousing
+## Module 3 Part 2: Data Warehousing  
+### 3.1: Prepare the lab environment  
+
+### 3.2: Loading Data
+#### 3.2.1: Load data into the dimension table DimDate  
+#### 3.2.2: Load data into the dimension table DimCategory  
+#### 3.2.3: Load data into the dimension table DimCountry
+#### 3.2.4: Load data into the fact table FactSales  
+
+### 3.3: Queries for data analytics 
+#### 3.3.1: Create a grouping sets query  
+#### 3.3.2: Create a rollup query 
+#### 3.3.3: Create a cube query 
+#### 3.3.4: Create an MQT
 
 
-## Module 4: 
+## Module 4: Data Analytics (Cognos Analytics)
 you will create a Cognos data source that points to a data warehouse table, 
 create a bar chart of Quarterly sales of cell phones, create a pie chart of sales of electronic 
 goods by category, and create a line chart of total sales per month for the year 2020. 
+### 4.1: Load data into data warehouse 
+#### 4.1.1: Import Data 
+#### 4.1.2: List top 10 rows
+### 4.2: Create data source in Cognos
+#### 4.2.1: create a data source in Cognos that points to the table in your IBM DB2 database 
+### 4.3: Create dashboard  
+#### 4.3.1: Create a line chart
+#### 4.3.2: Create a pie chart
+#### 4.3.3: Create a bar chart
 
+## Module 5: ETL & Data Pipelines
+tools/software: MySQL Server, IBM DB2 database running on IBM Cloud 
 
-## Module 5:
 you will extract data from OLTP, NoSQL, and MongoDB databases into CSV format. 
 You will then transform the OLTP data to suit the data warehouse schema and then load 
 the transformed data into the data warehouse. Finally, you will verify that the data is loaded properly
-
+### 5.1: Set up staging data warehouse 
+### 5.2: Set up production data warehouse 
+### 5.3:
 
 ## Module 6:
 , you will use your skills in Big Data Analytics to create 
