@@ -65,7 +65,6 @@ Tools/Software: MongoDB Server, MongoDB Command Line Backup Tools
 
 ### 2.1 Working with MongoDB  
 
-
 ##### 2.1.1 Import 'catalog.json' into mongodb server in a database named 'catalog' and collection named 'eletronics'  
 ``` mongoimport -u root -p xxxxxx --authenticationDatabase admin -db xxx --collection xxx -- file xxx.json```  
 ##### 2.1.2 List out all the databases  
@@ -144,11 +143,15 @@ you need to keep data synchronized between different databases/data warehouses a
 ##
 you will be given a set of python scripts to start with. You will use/modify them to perform the incremental data load from MySQL server which acts as a staging warehouse to the IBM DB2 which is a production data warehouse. This script will be scheduled by the DE to sync up the data between the staging and production data warehouse. 
 ##  5.1: ETL 
-5.1
-### 5.1.1 : Set up Staging Data Warehouse (MySQL)  
-run python file in linux terminal 
+### 5.1.1 : Set up Staging Data Warehouse (MySQL) and load the file ```sales.sql``` into the sales database. 
+#### Step 1: Start MySQL server using linux terminal and create a database named ```sales```
+#### Step 2: Import the data in the file ```sales.sql``` into ```sales``` database. 
+#### Step 3: Python and make sure youre able to connect to the MySQL server instance on the Theia Environment 
+##
 ### 5.2: Set up Production Data Warehouse (IBM Db2)
-### 5.3: Running the automation.py file 
+#### 5.2.1: how to connect to the cloud instance of IBM DB2 using Python. 
+
+### 5.3: Automate loading of incremental data into the data warehouse 
 
 ## 5.2: Data Pipelines Using Apache Airflow 
 tools/software: Apache Airflow 
