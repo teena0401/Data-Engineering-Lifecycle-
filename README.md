@@ -139,9 +139,37 @@ tools/software: MySQL Server, IBM DB2 database running on IBM Cloud
 you will extract data from OLTP, NoSQL, and MongoDB databases into CSV format. 
 You will then transform the OLTP data to suit the data warehouse schema and then load 
 the transformed data into the data warehouse. Finally, you will verify that the data is loaded properly
-### 5.1: Set up staging data warehouse 
-### 5.2: Set up production data warehouse 
-### 5.3:
+##
+you need to keep data synchronized between different databases/data warehouses as a part of your daily routine. One task that is routinely performed is the sync up of staging data warehouse and production data warehouse. Automating this sync up will save you a lot of time and standardize your process.
+##
+you will be given a set of python scripts to start with. You will use/modify them to perform the incremental data load from MySQL server which acts as a staging warehouse to the IBM DB2 which is a production data warehouse. This script will be scheduled by the DE to sync up the data between the staging and production data warehouse. 
+##  5.1: ETL 
+5.1
+### 5.1.1 : Set up Staging Data Warehouse (MySQL)  
+run python file in linux terminal 
+### 5.2: Set up Production Data Warehouse (IBM Db2)
+### 5.3: Running the automation.py file 
+
+## 5.2: Data Pipelines Using Apache Airflow 
+tools/software: Apache Airflow 
+
+Write a pipeline that analyzes the web server log file, extracts that required lines(ending with html) and fields(time stamp, size) and transforms (bytes to mb) and load (append to an exisiting file).
+
+### 5.2.1: Prepare the Environment 
+
+### 5.2.2: Create a DAG
+#### 5.2.2.1: Define the DAG arguments
+#### 5.2.2.2: Define the DAG
+#### 5.2.2.3: Create a task to extract data 
+#### 5.2.2.4: Create a task to transform the data in the txt file  
+#### 5.2.2.5: Create a task to load the data 
+#### 5.2.2.6: Define the task pipeline 
+
+### 5.2.3: Getting the DAG operational 
+#### 5.2.3.1: Submit the DAG
+#### 5.2.3.2: Unpause the DAG
+#### 5.2.3.3: Monitor the DAG
+
 
 ## Module 6:
 , you will use your skills in Big Data Analytics to create 
