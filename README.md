@@ -82,8 +82,7 @@ Tools/Software: MongoDB Server, MongoDB Command Line Backup Tools
 
 Tools/Software: ERD Design Tool of pgAdmin , PostgreSQL Database Server
 
-- design the schema for a data warehouse based on the schema 
-of the OLTP and NoSQL databases. You’ll then create the schema and load the data into fact and dimension tables, automate the daily incremental data insertion into the data warehouse, and create Cubes and Rollups to make the reporting easier.
+- design the schema for a data warehouse based on the schema  of the OLTP and NoSQL databases. You’ll then create the schema and load the data into fact and dimension tables, automate the daily incremental data insertion into the data warehouse, and create Cubes and Rollups to make the reporting easier.
 
 ### 3.1: Design a Data Warehouse  
 #### 3.1.1: Design the dimension table softcartDimDate 
@@ -142,25 +141,26 @@ the transformed data into the data warehouse. Finally, you will verify that the 
 you need to keep data synchronized between different databases/data warehouses as a part of your daily routine. One task that is routinely performed is the sync up of staging data warehouse and production data warehouse. Automating this sync up will save you a lot of time and standardize your process.
 ##
 you will be given a set of python scripts to start with. You will use/modify them to perform the incremental data load from MySQL server which acts as a staging warehouse to the IBM DB2 which is a production data warehouse. This script will be scheduled by the DE to sync up the data between the staging and production data warehouse. 
+
 ##  5.1: ETL 
 ### 5.1.1 : Set up Staging Data Warehouse (MySQL) and load the file ```sales.sql``` into the sales database. 
 #### Step 1: Start MySQL server using linux terminal and create a database named ```sales```
-#### Step 2: Import the data in the file ```sales.sql``` into ```sales``` database. 
-#### Step 3: Python and make sure youre able to connect to the MySQL server instance on the Theia Environment 
-##
+#### Step 2: Import the data in the file ```sales.sql``` into ```sales``` database  
+#### Step 3: Python and make sure youre able to connect to the MySQL server instance on the Theia Environment  
+##  
 ### 5.2: Set up Production Data Warehouse (IBM Db2)
 #### 5.2.1: how to connect to the cloud instance of IBM DB2 using Python. 
-
+##
 ### 5.3: Automate loading of incremental data into the data warehouse 
 
-## 5.2: Data Pipelines Using Apache Airflow 
+## 5.2: Data Pipelines Using Apache Airflow  
 tools/software: Apache Airflow 
 
 Write a pipeline that analyzes the web server log file, extracts that required lines(ending with html) and fields(time stamp, size) and transforms (bytes to mb) and load (append to an exisiting file).
 
 ### 5.2.1: Prepare the Environment 
 
-### 5.2.2: Create a DAG
+### 5.2.2: Create a DAG  
 #### 5.2.2.1: Define the DAG arguments
 #### 5.2.2.2: Define the DAG
 #### 5.2.2.3: Create a task to extract data 
@@ -173,11 +173,8 @@ Write a pipeline that analyzes the web server log file, extracts that required l
 #### 5.2.3.2: Unpause the DAG
 #### 5.2.3.3: Monitor the DAG
 
-
 ## Module 6:
-, you will use your skills in Big Data Analytics to create 
-a Spark connection to the data warehouse, and then deploy a machine learning model on 
-SparkML for making sales projections
+Use your skills in Big Data Analytics to create a Spark connection to the data warehouse, and then deploy a machine learning model on SparkML for making sales projections
 
 
 
