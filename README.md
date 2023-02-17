@@ -162,6 +162,8 @@ Write a pipeline that analyzes the web server log file, extracts that required l
 
 ### 5.2.2: Create a DAG  
 #### 5.2.2.1: Define the DAG arguments
+<img src="https://imgur.com/LFzgZ1E.png">  
+
 #### 5.2.2.2: Define the DAG
 #### 5.2.2.3: Create a task to extract data 
 #### 5.2.2.4: Create a task to transform the data in the txt file  
