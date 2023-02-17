@@ -154,7 +154,7 @@ you will be given a set of python scripts to start with. You will use/modify the
 ### 5.3: Automate loading of incremental data into the data warehouse 
 
 ## 5.2: Data Pipelines Using Apache Airflow  
-tools/software: Apache Airflow 
+tools/software: Apache Airflow, python 
 
 Write a pipeline that analyzes the web server log file, extracts that required lines(ending with html) and fields(time stamp, size) and transforms (bytes to mb) and load (append to an exisiting file).
 
@@ -162,13 +162,14 @@ Write a pipeline that analyzes the web server log file, extracts that required l
 
 ### 5.2.2: Create a DAG  
 #### 5.2.2.1: Define the DAG arguments
-<img src="https://imgur.com/LFzgZ1E.png">  
+<img src=".png">  
 
-#### 5.2.2.2: Define the DAG
-#### 5.2.2.3: Create a task to extract data 
-#### 5.2.2.4: Create a task to transform the data in the txt file  
-#### 5.2.2.5: Create a task to load the data 
-#### 5.2.2.6: Define the task pipeline 
+#### 5.2.2.2: Define the DAG   
+<img src=".png">    
+#### 5.2.2.3: Create a task to extract data , transform the data in the txt file  ,load the data   
+<img src=".png">   
+#### 5.2.2.6: Define the task pipeline   
+<img src =".png">   
 
 ### 5.2.3: Getting the DAG operational 
 #### 5.2.3.1: Submit the DAG
