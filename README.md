@@ -38,7 +38,8 @@ Tools/ Software: MySQL 8.0.22 , phpMyAdmin 5.0.4
 ### 1.2: Load the data  
 #### 1.2.1: Import the data in the file oltpdata.csv  
 import provided csv.file into table using phpMyAdmin  
-<img src="https://imgur.com/f5jrp5q.png">
+<img src="https://imgur.com/f5jrp5q.png" width = 600 height =300>
+
 #### 1.2.2: List the tables in the database  
 ``` SHOW TABLES IN sales ;```  
 <img src ="https://imgur.com/Bht5B8y.png">
@@ -64,24 +65,34 @@ create a bash script and using ```mysqldump``` command to export data
 Tools/Software: MongoDB Server, MongoDB Command Line Backup Tools 
 
 ### 2.1 Working with MongoDB  
+
+start mongo db
+<img src="https://imgur.com/bXcP5jD.png">
 #### 2.1.1 Import 'catalog.json' into mongodb server in a database named 'catalog' and collection named 'eletronics'  
 ``` mongoimport -u root -p xxxxxx --authenticationDatabase admin -db xxx --collection xxx -- file xxx.json```  
+<img src="https://imgur.com/llrHOB3.png">
 
 #### 2.1.2 List out all the databases  
 ``` show dbs``` 
+<img src="https://imgur.com/akrRTR8.png">
 
 #### 2.1.3 List out all the collections in the database  
 ``` show collections ``` 
+<img src="https://imgur.com/peGOmN4.png">
 
 #### 2.1.4 Create an index on the field  
 ``` db.collection.CreateIndex({"field:1}) ```  
+<img src="https://imgur.com/3CSz1xk.png">
 
 #### 2.1.5 Write a query to find the count of laptops   
 ``` db.collection.count({type:"laptop"})```  
+<img src="https://imgur.com/TYXKDGW.png">
 
 #### 2.1.6 Write a query to find the number of smartphone with screen size of 6 inches  
 
 #### 2.1.7 Export the 3 fields from the 'electronics' collection into a file named eletronics.csv
+<img src="https://imgur.com/GejdghR.png">
+
 
 ## Module 3 Part 1: Data Warehousing Reporting
 
