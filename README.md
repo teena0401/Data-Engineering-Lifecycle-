@@ -162,19 +162,22 @@ Write a pipeline that analyzes the web server log file, extracts that required l
 
 ### 5.2.2: Create a DAG  
 #### 5.2.2.1: Define the DAG arguments
-<img src=".png">  
+<img src="https://imgur.com/kC0ufNc.png">  
 
 #### 5.2.2.2: Define the DAG   
-<img src=".png">    
+<img src="https://imgur.com/Qz2Wxvn.png">    
 #### 5.2.2.3: Create a task to extract data , transform the data in the txt file  ,load the data   
-<img src=".png">   
-#### 5.2.2.6: Define the task pipeline   
-<img src =".png">   
+<img src="https://imgur.com/6iA5pTq.png">   
+#### 5.2.2.6: Define the Task Pipeline   
+<img src ="https://imgur.com/HQgZU2k.png">   
 
 ### 5.2.3: Getting the DAG operational 
-#### 5.2.3.1: Submit the DAG
-#### 5.2.3.2: Unpause the DAG
-#### 5.2.3.3: Monitor the DAG
+#### 5.2.3.1: Submit the DAG  
+<img src ="https://imgur.com/aso0xxd.png">  
+#### 5.2.3.2: Unpause the DAG  
+<img src="https://imgur.com/EL7KBMP.png">  
+#### 5.2.3.3: Monitor the DAG  
+<img src = "https://imgur.com/PW9nFIV.png">  
 
 ## Module 6:
 Use your skills in Big Data Analytics to create a Spark connection to the data warehouse, and then deploy a machine learning model on SparkML for making sales projections
