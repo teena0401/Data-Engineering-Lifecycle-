@@ -147,8 +147,11 @@ goods by category, and create a line chart of total sales per month for the year
 
 ### 4.3: Create dashboard  
 #### 4.3.1: Create a line chart
-#### 4.3.2: Create a pie chart
+<img src="https://imgur.com/bWW2Zf8.png">   
+#### 4.3.2: Create a pie chart   
+<img src="https://imgur.com/ZO4Rssx.png">  
 #### 4.3.3: Create a bar chart
+<img src ="https://imgur.com/wb5xXAN.png">
 
 ## Module 5: ETL & Data Pipelines
 tools/software: MySQL Server, IBM DB2 database running on IBM Cloud 
