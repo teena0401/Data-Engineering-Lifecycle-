@@ -114,7 +114,10 @@ Tools/software: PostgreSQL UI
 
 ### 3.1: Prepare the lab environment  ### 3.2: Loading Data via PostgreSQL UI 
 #### 3.2.1: Load data into the dimension table DimDate, table DimCategory, table DimCountry
+<img src="https://imgur.com/ZBYEzm6.png">   
+
 #### 3.2.2: Load data into the fact table FactSales  
+<img src ="https://imgur.com/TMjqOC1.png">  
 
 ### 3.3: Queries for data analytics 
 #### 3.3.1: Create a grouping sets query  
