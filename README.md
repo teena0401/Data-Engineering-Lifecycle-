@@ -112,13 +112,9 @@ Tools/Software: ERD Design Tool of pgAdmin , PostgreSQL Database Server
 
 Tools/software: PostgreSQL UI
 
-### 3.1: Prepare the lab environment  
-
-### 3.2: Loading Data via PostgreSQL UI 
-#### 3.2.1: Load data into the dimension table DimDate  
-#### 3.2.2: Load data into the dimension table DimCategory  
-#### 3.2.3: Load data into the dimension table DimCountry
-#### 3.2.4: Load data into the fact table FactSales  
+### 3.1: Prepare the lab environment  ### 3.2: Loading Data via PostgreSQL UI 
+#### 3.2.1: Load data into the dimension table DimDate, table DimCategory, table DimCountry
+#### 3.2.2: Load data into the fact table FactSales  
 
 ### 3.3: Queries for data analytics 
 #### 3.3.1: Create a grouping sets query  
