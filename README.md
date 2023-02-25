@@ -26,7 +26,7 @@ This project is sectioned into 6 parts:
 ####  1.1.2: Design a table named sales_data     
 ```input:``` *CREATE TABLE _name_(columns1 data_type, columns2 data_type, columns3 data_type);*
 
-```output:```  <img src ="https://imgur.com/phLi05N.png" alt="hkjdshjkahdkjhsa" title="hunnn" >   
+```output:```  <img src ="https://imgur.com/phLi05N.png" title="hunnn" >   
 
 ### 1.2: Loading data into MySQL database
 #### 1.2.1: Import the data in the file oltpdata.csv  
