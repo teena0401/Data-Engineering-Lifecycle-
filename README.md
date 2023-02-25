@@ -14,20 +14,21 @@ This project is sectioned into 6 parts:
 ## Module 1: OLTP Database
 
 ```Tools/ Software: MySQL 8.0.22 , phpMyAdmin 5.0.4```
-
 - Design the OLTP database for an E-Commerce website, populate the OLTP Database with the data provided and automate the export of the daily incremental data into the data warehouse. 
 - Design a data platforms that uses MySQL as an OLTP databases. You will be using MySQL to store the OLTP data. 
 
 ### 1.1: Design OLTP database in MySQL Server   
-####  1.1.1: Create a database   
-``` CREATE DATABASE _name_```      
-<img src="https://imgur.com/ncx7DVb.png">
+####  1.1.1: Create a database & design a table named sales_data  
+```input:``` *CREATE DATABASE _name_*    
+
+```output:``` <img src="https://imgur.com/ncx7DVb.png">
 
 ####  1.1.2: Design a table named sales_data     
-``` CREATE TABLE _name_(columns1 data_type, columns2 data_type, columns3 data_type);```
-<img src ="https://imgur.com/phLi05N.png">   
+```input:``` *CREATE TABLE _name_(columns1 data_type, columns2 data_type, columns3 data_type);*
 
-### 1.2: Load the data  
+```output:```  <img src ="https://imgur.com/phLi05N.png" alt="hkjdshjkahdkjhsa" title="hunnn" >   
+
+### 1.2: Loading data into MySQL database
 #### 1.2.1: Import the data in the file oltpdata.csv  
 import provided csv.file into table using phpMyAdmin  
 <img src="https://imgur.com/f5jrp5q.png" width = 600 height =300>
