@@ -12,9 +12,9 @@ This project is sectioned into 6 parts:
 6. ```Big Data Analytics with Spark``` - Create a Spark connection to the data warehouse, and then deploy a machine learning model
 
 # Module 1: OLTP Database
-```Tools/ Software: MySQL 8.0.22 , phpMyAdmin 5.0.4```
+```Tools/ Software: MySQL 8.0.22 , phpMyAdmin 5.0.4``` 
 - Design the OLTP database for an E-Commerce website, populate the OLTP Database with the data provided and automate the export of the daily incremental data into the data warehouse. 
-- Design a data platforms that uses MySQL as an OLTP databases. You will be using MySQL to store the OLTP data. 
++ Design a data platforms that uses MySQL as an OLTP databases. You will be using MySQL to store the OLTP data. 
 
 ## 1.1 ```Design OLTP database in MySQL Server ```  
 ### 1.1.a Create a database & design a table named sales_data  
@@ -55,7 +55,7 @@ This project is sectioned into 6 parts:
 
 # Module 2: NoSQL databases     
 - design a data platform that uses MongDB as a NoSQL database and use it to store the e-commerce catalog data. 
-- set up a NoSQL database to store the catalog data for an E-Commerce website, load the E-Commerce catalog data into the NoSQL database, and query the E-Commerce catalog data in the NoSQL database.   
++ set up a NoSQL database to store the catalog data for an E-Commerce website, load the E-Commerce catalog data into the NoSQL database, and query the E-Commerce catalog data in the NoSQL database.   
 ```Tools/Software: MongoDB Server, MongoDB Command Line Backup Tools ```
 
 ## 2.1 ```Working with MongoDB```  
@@ -96,7 +96,7 @@ This project is sectioned into 6 parts:
 
 ```Tools/Software: ERD Design Tool of pgAdmin , PostgreSQL Database Server```
 
-- design the schema for a data warehouse based on the schema  of the OLTP and NoSQL databases. You’ll then create the schema and load the data into fact and dimension tables, automate the daily incremental data insertion into the data warehouse, and create Cubes and Rollups to make the reporting easier
++ design the schema for a data warehouse based on the schema  of the OLTP and NoSQL databases. You’ll then create the schema and load the data into fact and dimension tables, automate the daily incremental data insertion into the data warehouse, and create Cubes and Rollups to make the reporting easier
 
 ## 3.1 ```Design a Data Warehouse```  
 ### 3.1.1 Design the relationships of fact table(SoftcartFactSales) and dimension tables(DimDate, DimCategory, DimItem, DimCountry)
@@ -159,8 +159,8 @@ order by country asc;
 <img src ="https://imgur.com/UIt1Hts.png" height ="450" width ="600">  
 
 # Module 4: Data Analytics (Cognos Analytics)
-you will create a Cognos data source that points to a data warehouse table, 
-create a bar chart of Quarterly sales of cell phones, create a pie chart of sales of electronic, goods by category, and create a line chart of total sales per month for the year 2020.  
+- you will create a Cognos data source that points to a data warehouse table, 
++ create a bar chart of Quarterly sales of cell phones, create a pie chart of sales of electronic, goods by category, and create a line chart of total sales per month for the year 2020.  
 
 ## 4.1 ```Load data into Data Warehouse```
 ### 4.1.1: Import Data 
@@ -210,7 +210,7 @@ write a python script that automatically load additional values from staging war
 
 ### 5.3.1: Import necessary library and create connection for each database   
 <img src="https://imgur.com/RBNG8WI.png" width ="800">  
-<img src="https://imgur.com/DHUuVmc.png"  width ="800"> 
+<img src="https://imgur.com/DHUuVmc.png" width ="800"> 
 
 ### 5.3.2: Load incremental data into production data warehouse by comparing the data from two different datawarehouse (Staging Data Warehouse vs Production Data Warehouse.   
 
