@@ -1,12 +1,11 @@
 # Data Engineering Capstone Project (SoftCart.com) 
 
-
 ## Introduction 
 I will assume the role of an Associate Data Engineer who has recently joined an e-commerce organization, Softcart.com. I will be presented with a business challenge that requires building a data platform for retailer data analytics. 
 
 This project is sectioned into 6 parts:
 1. ```OLTP database``` - Design a data platform that uses MySQL as an OLTP database and MongoDB as a NoSQL database
-2. ```MongoDB``` - 
+2. ```MongoDB``` 
 3. ```Data Warehouse Design, Setup, and Reporting``` - Design and implement a data warehouse and generate reports from the data 
 4. ```Data Analytics Overview and Preparation``` - Design a reporting dashboard that reflects the key metrics of the business
 5. ```ETL & Data Pipelines``` - Extract data from OLTP and NoSQL databases, transform it and load it into the data warehouse, and then create an ETL pipeline
@@ -54,11 +53,10 @@ This project is sectioned into 6 parts:
 > create a bash script and using ```mysqldump``` command to export data 
 
 
-
 # Module 2: NoSQL databases     
 - design a data platform that uses MongDB as a NoSQL database and use it to store the e-commerce catalog data. 
 - set up a NoSQL database to store the catalog data for an E-Commerce website, load the E-Commerce catalog data into the NoSQL database, and query the E-Commerce catalog data in the NoSQL database.   
-Tools/Software: MongoDB Server, MongoDB Command Line Backup Tools 
+```Tools/Software: MongoDB Server, MongoDB Command Line Backup Tools ```
 
 ## 2.1 ```Working with MongoDB```  
 ### 2.1.1 prepare the environment in linux terminal 
@@ -102,11 +100,10 @@ Tools/Software: MongoDB Server, MongoDB Command Line Backup Tools
 
 ## 3.1 ```Design a Data Warehouse```  
 ### 3.1.1 Design the relationships of fact table(SoftcartFactSales) and dimension tables(DimDate, DimCategory, DimItem, DimCountry)
-<img src="https://imgur.com/xpt6rNG.png">
+<img src="https://imgur.com/xpt6rNG.png" height ="450" width ="600">
 
 ## 3.2  ```Create the schema```    
-### 3.2.1: Create the schema  
-<img src="https://imgur.com/wFuBfkN.png">
+<img src="https://imgur.com/wFuBfkN.png" height ="450" width ="600">
 
 # Module 3(P2): Data Warehousing  
 
@@ -115,10 +112,10 @@ Tools/Software: MongoDB Server, MongoDB Command Line Backup Tools
 ## 3.1 ```Prepare the lab environment```  
 ## 3.2 ```Loading Data via PostgreSQL UI```
 ### 3.2.1 Load data into the dimension table DimDate, table DimCategory, table DimCountry
-<img src="https://imgur.com/ZBYEzm6.png">   
+<img src="https://imgur.com/ZBYEzm6.png" height ="450" width ="600" >   
 
 ### 3.2.2: Load data into FactSales table 
-<img src ="https://imgur.com/TMjqOC1.png">  
+<img src ="https://imgur.com/TMjqOC1.png" height ="450" width ="600" >  
 
 ## 3.3: ```Queries for Data Analytics ```    
 ### 3.3.1: Create a Grouping sets query 
@@ -129,7 +126,7 @@ left join public."DimCountry" c on f.countryid = c.countryid
 left join public."DimCategory" a on a.categoryid = f.categoryid
 group by grouping sets (a.category, c.country)
 ```
-<img src="https://imgur.com/RgPo2H8.png">  
+<img src="https://imgur.com/RgPo2H8.png" height ="450" width ="600">  
 
 ### 3.3.2: Create a Rollup query 
 ```sql
@@ -139,8 +136,7 @@ left join public."DimCountry" c on f.countryid = c.countryid
 left join public."DimDate" a on a.dateid = f.dateid
 group by roll up (a.year, c.country):
 ```
-
-<img src ="https://imgur.com/xMrnf82.png">  
+<img src ="https://imgur.com/xMrnf82.png" height ="450" width ="600">  
 
 ### 3.3.3: Create a Cube query
 ```sql 
@@ -150,7 +146,7 @@ left join public."DimCountry" c on f.country.id = c.countryid
 left join pubic."DimDate" a on a.dateid = f.dateid
 group by cube (a.year, c.country);
 ```    
-<img src ="https://imgur.com/cA4WFQ1.png">   
+<img src ="https://imgur.com/cA4WFQ1.png" height ="450" width ="600" >   
 
 ### 3.3.4: Create an MQT  
 ```sql 
@@ -160,8 +156,7 @@ left join public."DimCountry" c on f.countryid = c.countryid
 group by country 
 order by country asc;
 ```
-
-<img src ="https://imgur.com/UIt1Hts.png">  
+<img src ="https://imgur.com/UIt1Hts.png" height ="450" width ="600">  
 
 # Module 4: Data Analytics (Cognos Analytics)
 you will create a Cognos data source that points to a data warehouse table, 
@@ -208,14 +203,14 @@ Use query statement to examine whether the data has loaded in MySQL server
 
 ## 5.2 ```Set up Production Data Warehouse (IBM Db2)``` 
 ### 5.2.1: Load csv file into production data warehouse using IBM DB2 UI   
-<img src="https://imgur.com/y3MQeR0.png">  
+<img src="https://imgur.com/y3MQeR0.png" height ="450" width ="800">  
 
 ## 5.3 ```Automate loading of incremental data into the Data Warehouse```   
 write a python script that automatically load additional values from staging warehouse(MySQL) that doesnt have in production warehouse(IBM DB2)
 
 ### 5.3.1: Import necessary library and create connection for each database   
-<img src="https://imgur.com/RBNG8WI.png">  
-<img src="https://imgur.com/DHUuVmc.png"> 
+<img src="https://imgur.com/RBNG8WI.png" width ="800">  
+<img src="https://imgur.com/DHUuVmc.png"  width ="800"> 
 
 ### 5.3.2: Load incremental data into production data warehouse by comparing the data from two different datawarehouse (Staging Data Warehouse vs Production Data Warehouse.   
 
