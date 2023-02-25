@@ -1,7 +1,6 @@
 # Data Engineering Capstone Project (SoftCart.com) 
-***
----
-____
+
+
 ## Introduction 
 I will assume the role of an Associate Data Engineer who has recently joined an e-commerce organization, Softcart.com. I will be presented with a business challenge that requires building a data platform for retailer data analytics. 
 
@@ -92,6 +91,7 @@ Tools/Software: MongoDB Server, MongoDB Command Line Backup Tools
 <img src="https://imgur.com/TYXKDGW.png">
 
 ### 2.1.7 Export the 3 fields from the 'electronics' collection into a file named eletronics.csv
+> ```INPUT:``` *mongoexport -u root -p --authentionDatabase admin --db catalog --collection electronics -- out electronic.csv*
 <img src="https://imgur.com/GejdghR.png">
 
 # Module 3 Part 1: Data Warehousing Reporting
@@ -105,7 +105,7 @@ Tools/Software: MongoDB Server, MongoDB Command Line Backup Tools
 <img src="https://imgur.com/xpt6rNG.png">
 
 ## 3.2  ```Create the schema```    
-#### 3.2.1: Create the schema  
+### 3.2.1: Create the schema  
 <img src="https://imgur.com/wFuBfkN.png">
 
 # Module 3(P2): Data Warehousing  
@@ -114,48 +114,77 @@ Tools/Software: MongoDB Server, MongoDB Command Line Backup Tools
 
 ## 3.1 ```Prepare the lab environment```  
 ## 3.2 ```Loading Data via PostgreSQL UI```
-#### 3.2.1 Load data into the dimension table DimDate, table DimCategory, table DimCountry
+### 3.2.1 Load data into the dimension table DimDate, table DimCategory, table DimCountry
 <img src="https://imgur.com/ZBYEzm6.png">   
 
-#### 3.2.2: Load data into the fact table FactSales  
+### 3.2.2: Load data into FactSales table 
 <img src ="https://imgur.com/TMjqOC1.png">  
 
-## 3.3: ```Queries for data analytics ```    
-#### 3.3.1: Create a grouping sets query  
+## 3.3: ```Queries for Data Analytics ```    
+### 3.3.1: Create a Grouping sets query 
+```sql 
+select c.country, a.category, sum(f.amount) as total sales
+from public."FactSales" f 
+left join public."DimCountry" c on f.countryid = c.countryid 
+left join public."DimCategory" a on a.categoryid = f.categoryid
+group by grouping sets (a.category, c.country)
+```
 <img src="https://imgur.com/RgPo2H8.png">  
 
-#### 3.3.2: Create a rollup query  
+### 3.3.2: Create a Rollup query 
+```sql
+SELECT c.country, a.year, sum(f.amount) as totalsales
+from public."FactSales" f
+left join public."DimCountry" c on f.countryid = c.countryid
+left join public."DimDate" a on a.dateid = f.dateid
+group by roll up (a.year, c.country):
+```
+
 <img src ="https://imgur.com/xMrnf82.png">  
 
-#### 3.3.3: Create a cube query  
+### 3.3.3: Create a Cube query
+```sql 
+SELECT c.country, a.year, avg(f.amount) as average_sales
+from public."FactSales" f
+left join public."DimCountry" c on f.country.id = c.countryid
+left join pubic."DimDate" a on a.dateid = f.dateid
+group by cube (a.year, c.country);
+```    
 <img src ="https://imgur.com/cA4WFQ1.png">   
 
-#### 3.3.4: Create an MQT  
+### 3.3.4: Create an MQT  
+```sql 
+create table total_sales_per_country as (SELECT c.country, sum(f.amount) as total_sales
+from public."FactSales" f
+left join public."DimCountry" c on f.countryid = c.countryid
+group by country 
+order by country asc;
+```
+
 <img src ="https://imgur.com/UIt1Hts.png">  
 
 # Module 4: Data Analytics (Cognos Analytics)
 you will create a Cognos data source that points to a data warehouse table, 
-create a bar chart of Quarterly sales of cell phones, create a pie chart of sales of electronic 
-goods by category, and create a line chart of total sales per month for the year 2020.  
+create a bar chart of Quarterly sales of cell phones, create a pie chart of sales of electronic, goods by category, and create a line chart of total sales per month for the year 2020.  
 
 ## 4.1 ```Load data into Data Warehouse```
-#### 4.1.1: Import Data 
+### 4.1.1: Import Data 
 
-#### 4.1.2: List top 10 rows  
+### 4.1.2: List top 10 rows  
 
-### 4.2 ```Create data source in Cognos```
-#### 4.2.1: create a data source in Cognos that points to the table in your IBM DB2 database 
+## 4.2 ```Create data source in Cognos```
+### 4.2.1: create a data source in Cognos that points to the table in your IBM DB2 database 
 
 ## 4.3 ```Create Dashboard```  
-#### 4.3.1: Create a line chart
+### 4.3.1: Create a line chart
 <img src="https://imgur.com/bWW2Zf8.png">   
-#### 4.3.2: Create a pie chart   
+### 4.3.2: Create a pie chart   
 <img src="https://imgur.com/ZO4Rssx.png">  
-#### 4.3.3: Create a bar chart
+### 4.3.3: Create a bar chart
 <img src ="https://imgur.com/wb5xXAN.png">
 
 # Module 5: ETL & Data Pipelines
-tools/software: MySQL Server, IBM DB2 database running on IBM Cloud 
+```tools/software: MySQL Server, IBM DB2 database running on IBM Cloud ```
 
 you will extract data from OLTP, NoSQL, and MongoDB databases into CSV format. 
 You will then transform the OLTP data to suit the data warehouse schema and then load the transformed data into the data warehouse. Finally, you will verify that the data is loaded properly.
@@ -178,17 +207,17 @@ Use query statement to examine whether the data has loaded in MySQL server
 <img src = "https://imgur.com/8Nyu1Hy.png">
 
 ## 5.2 ```Set up Production Data Warehouse (IBM Db2)``` 
-#### 5.2.1: Load csv file into production data warehouse using IBM DB2 UI   
+### 5.2.1: Load csv file into production data warehouse using IBM DB2 UI   
 <img src="https://imgur.com/y3MQeR0.png">  
 
 ## 5.3 ```Automate loading of incremental data into the Data Warehouse```   
 write a python script that automatically load additional values from staging warehouse(MySQL) that doesnt have in production warehouse(IBM DB2)
 
-#### 5.3.1: Import necessary library and create connection for each database   
+### 5.3.1: Import necessary library and create connection for each database   
 <img src="https://imgur.com/RBNG8WI.png">  
 <img src="https://imgur.com/DHUuVmc.png"> 
 
-#### 5.3.2: Load incremental data into production data warehouse by comparing the data from two different datawarehouse (Staging Data Warehouse vs Production Data Warehouse.   
+### 5.3.2: Load incremental data into production data warehouse by comparing the data from two different datawarehouse (Staging Data Warehouse vs Production Data Warehouse.   
 
 In the following diagram, we find the last row of row_id in sales_data from production data warehouse and then load the rows that are greater than last_rowid from staging data warehouse into production data warehouse. The additional rows are the incremental data and we automate it using python script. After we have completed the process, we close the connection from both data warehouse.   
 
