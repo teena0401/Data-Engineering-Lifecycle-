@@ -164,19 +164,21 @@ order by country asc;
 
 ## 4.1 ```Load data into Data Warehouse```
 ### 4.1.1: Import Data 
+<img src ="https://imgur.com/3bf4WX5.png">
 
 ### 4.1.2: List top 10 rows  
+ <img src="https://imgur.com/pAQPAUT.png">
 
 ## 4.2 ```Create data source in Cognos```
 ### 4.2.1: create a data source in Cognos that points to the table in your IBM DB2 database 
 
 ## 4.3 ```Create Dashboard```  
 ### 4.3.1: Create a line chart
-<img src="https://imgur.com/bWW2Zf8.png">   
+<img src="https://imgur.com/vULM9xJ.png">   
 ### 4.3.2: Create a pie chart   
-<img src="https://imgur.com/ZO4Rssx.png">  
+<img src="https://imgur.com/1igjVov.png">  
 ### 4.3.3: Create a bar chart
-<img src ="https://imgur.com/wb5xXAN.png">
+<img src ="https://imgur.com/XUn1gdz.png">
 
 # Module 5: ETL & Data Pipelines
 ```tools/software: MySQL Server, IBM DB2 database running on IBM Cloud ```
