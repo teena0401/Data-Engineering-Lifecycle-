@@ -25,7 +25,6 @@ This project is sectioned into 6 parts:
 
 # Part A : Designing Data Staging Areas ( MySQL + MongoDB )
 
-
 ### A1: OLTP Database
 ```Tools/ Software: MySQL 8.0.22 , phpMyAdmin 5.0.4``` 
 - Design the OLTP database for an E-Commerce website, populate the OLTP Database with the data provided and automate the export of the daily incremental data into the data warehouse. 
@@ -172,7 +171,7 @@ order by country asc;
 ```
 <img src ="https://imgur.com/UIt1Hts.png" height ="450" width ="600">  
 
-# Part C - Design a ```Sales Reporting Dashboard``` that reflects the key metrics of business 
+# Part C : Design a ```Sales Reporting Dashboard``` that reflects the key metrics of business 
 
 ### C1) Data Analytics (Cognos Analytics)
 - you will create a Cognos data source that points to a data warehouse table, 
@@ -196,9 +195,9 @@ order by country asc;
 <img src ="https://imgur.com/XUn1gdz.png">
 
 
-# Part D ```Synchronize data``` between staging and production warehouse by automate incremental loading process of sales data 
+# Part D : ```Synchronize data``` between staging and production warehouse by automate incremental loading process of sales data 
 
-### D1. Syn up between staging and production data warehouse
+### D1. Sync up between staging and production data warehouse
 ```tools/software: MySQL Server, IBM DB2 database running on IBM Cloud ```
 
 you will extract data from OLTP, NoSQL, and MongoDB databases into CSV format. 
@@ -207,33 +206,32 @@ You will then transform the OLTP data to suit the data warehouse schema and then
 you need to keep data synchronized between different databases/data warehouses as a part of your daily routine. One task that is routinely performed is the sync up of staging data warehouse and production data warehouse. Automating this sync up will save you a lot of time and standardize your process.
 you will be given a set of python scripts to start with. You will use/modify them to perform the incremental data load from MySQL server which acts as a staging warehouse to the IBM DB2 which is a production data warehouse. This script will be scheduled by the DE to sync up the data between the staging and production data warehouse. 
 
-## 5.1 ```ETL ```
-### 5.1.1 : Set up Staging Data Warehouse (MySQL) and load the file ```sales.sql``` into the sales database. 
+#### 1) Set up Staging Data Warehouse (MySQL) and load the file ```sales.sql``` into the sales database. 
 
-#### Step 1: Start MySQL server using linux terminal and create a database named ```sales```   
+##### Step 1: Start MySQL server using linux terminal and create a database named ```sales```   
 Use ```start_mysql``` to connect MySQL server and ``` create database name``` to create a db as staging area before loading into production data warehouse.   
 <img src="https://imgur.com/dTHyB8O.png">
 
-#### Step 2: Import the data in the file ```sales.sql``` into ```sales``` database    
+##### Step 2: Import the data in the file ```sales.sql``` into ```sales``` database    
 Use ```source``` command to load the dataset into staging data warehouse(MySQL)   
 <img src ="https://imgur.com/beOJade.png">
 
-#### Step 3: Make sure your are able to connect to the MySQL server instance on the Theia Environment   
+##### Step 3: Make sure your are able to connect to the MySQL server instance on the Theia Environment   
 Use query statement to examine whether the data has loaded in MySQL server   
 <img src = "https://imgur.com/8Nyu1Hy.png">
 
-## 5.2 ```Set up Production Data Warehouse (IBM Db2)``` 
-### 5.2.1: Load csv file into production data warehouse using IBM DB2 UI   
+#### 2)  ```Set up Production Data Warehouse (IBM Db2)``` 
+##### 2.1) Load csv file into production data warehouse using IBM DB2 UI   
 <img src="https://imgur.com/y3MQeR0.png" height ="450" width ="800">  
 
-## 5.3 ```Automate loading of incremental data into the Data Warehouse```   
+##### 2.2) ```Automate loading of incremental data into the Data Warehouse```   
 write a python script that automatically load additional values from staging warehouse(MySQL) that doesnt have in production warehouse(IBM DB2)
 
-### 5.3.1: Import necessary library and create connection for each database   
+##### 2.3) Import necessary library and create connection for each database   
 <img src="https://imgur.com/RBNG8WI.png" width ="800">  
 <img src="https://imgur.com/DHUuVmc.png" width ="800"> 
 
-### 5.3.2: Load incremental data into production data warehouse by comparing the data from two different datawarehouse (Staging Data Warehouse vs Production Data Warehouse.   
+##### 2.4) Load incremental data into production data warehouse by comparing the data from two different datawarehouse (Staging Data Warehouse vs Production Data Warehouse.   
 
 In the following diagram, we find the last row of row_id in sales_data from production data warehouse and then load the rows that are greater than last_rowid from staging data warehouse into production data warehouse. The additional rows are the incremental data and we automate it using python script. After we have completed the process, we close the connection from both data warehouse.   
 
@@ -241,39 +239,38 @@ In the following diagram, we find the last row of row_id in sales_data from prod
 <img src="https://imgur.com/w6qG5qk.png">
 
 
+# Part E : Develop a ```ETL pipeline``` that analyzes the web server log file, extracts the required lines and fields, transforms and loads into a file for further analysis
 
-
-## 5.2 ```Data Pipelines Using Apache Airflow```  
-
+### E) ```Data Pipelines Using Apache Airflow```      
 ```Tools/Technologise: Apache Airflow, Python``` 
 
-Write a pipeline that analyzes the web server log file, extracts that required lines(ending with html) and fields(time stamp, size) and transforms (bytes to mb) and load (append to an exisiting file).   
+- Write a pipeline that analyzes the web server log file, extracts that required lines(ending with html) and fields(time stamp, size) and transforms (bytes to mb) and load (append to an exisiting file).   
 
-### 5.2.1: Prepare the Environment 
+#### 1) Prepare the Environment 
 type ```start_airflow``` onto linux terminal to start the Apache Airflow tools  
 <img src ="https://imgur.com/7gYrQ3I.png">  
 
-### 5.2.2: Create a DAG  
-#### 5.2.2.1: Define the DAG arguments  
+#### 2): Create a DAG  
+##### 2.1)  Define the DAG arguments  
 <img src="https://imgur.com/kC0ufNc.png">   
 
-#### 5.2.2.2: Define the DAG  
+##### 2.2) Define the DAG  
 <img src="https://imgur.com/Qz2Wxvn.png">  
 
-#### 5.2.2.3: Create a task to extract data, transform the data in the txt file, load the data   
+##### 2.3) Create a task to extract data, transform the data in the txt file, load the data   
 <img src="https://imgur.com/6iA5pTq.png">  
 
-#### 5.2.2.6: Define the Task Pipeline    
+##### 2.4) Define the Task Pipeline    
 <img src ="https://imgur.com/HQgZU2k.png">    
 
-### 5.2.3: Getting the DAG operational 
-#### 5.2.3.1: Submit the DAG    
+#### 3) Getting the DAG operational 
+##### 3.1) Submit the DAG    
 <img src ="https://imgur.com/aso0xxd.png">   
 
-####  5.2.3.2: Unpause the DAG      
+##### 3.2) Unpause the DAG      
 <img src="https://imgur.com/EL7KBMP.png"> 
 
-####  5.2.3.3: Monitor the DAG     
+##### 3.3) Monitor the DAG     
 <img src = "https://imgur.com/PW9nFIV.png">     
 
 # Module 6:
