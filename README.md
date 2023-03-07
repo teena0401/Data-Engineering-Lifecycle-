@@ -273,8 +273,6 @@ type ```start_airflow``` onto linux terminal to start the Apache Airflow tools
 ##### 3.3) Monitor the DAG     
 <img src = "https://imgur.com/PW9nFIV.png">     
 
-# Module 6:
-Use your skills in Big Data Analytics to create a Spark connection to the data warehouse, and then deploy a machine learning model on SparkML for making sales projections
 
 
 
