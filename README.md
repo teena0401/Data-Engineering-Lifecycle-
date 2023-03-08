@@ -174,6 +174,9 @@ order by country asc;
 # Part C : Design a ```Sales Reporting Dashboard``` that reflects the key metrics of business 
 
 ### C1) Data Analytics (Cognos Analytics)
+
+```Tools/ Software: IBM cognoz Analytics, IBM DB2 ``` 
+
 - you will create a Cognos data source that points to a data warehouse table, 
 + create a bar chart of Quarterly sales of cell phones, create a pie chart of sales of electronic, goods by category, and create a line chart of total sales per month for the year 2020.  
  
