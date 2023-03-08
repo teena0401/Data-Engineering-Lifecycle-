@@ -4,10 +4,10 @@
 
 As part of *IBM Data Engineering Capstone Project*, I will assume as an Associate Data Engineer who has recently joined e-commerce organzation, to build data platform for retailer data analytics. 
 
-To implement a data warehouse system into a business, I then have to complete builiding the following five parts in the diagram below. 
+To implement a data warehouse system into e-commerce company, I then have to complete builiding the following five parts in the diagram below. 
 <img src="https://imgur.com/KYh4fIU.png">
 
-The Process of Building a Data Plaform
+The Process of Building a Data Platform
 - Part A - Establish ```Data Staging Area``` for temporary storing data from data source
 - Part B - Build a ```Staging Data Warehouse``` to aggregate disparate source data into a cohensive one before loading data into production data warehouse 
 - Part C - Design a ```Sales Reporting Dashboard``` that reflects the key metrics of business 
@@ -30,7 +30,7 @@ This project is sectioned into 6 parts:
 - Design the OLTP database for an E-Commerce website, populate the OLTP Database with the data provided and automate the export of the daily incremental data into the data warehouse. 
 + Design a data platforms that uses MySQL as an OLTP databases. You will be using MySQL to store the OLTP data. 
 
-#### 1) ```Design OLTP database in MySQL Server ```  
+#### 1)  Design OLTP database in MySQL Server   
 ##### 1.1) Create a database & design a table named sales_data  
  >```INPUT:``` *CREATE DATABASE _name_*    
 
@@ -41,7 +41,7 @@ This project is sectioned into 6 parts:
 
 <img src ="https://imgur.com/phLi05N.png" title="hunnn" >   
 
-#### 2)```Loading data into MySQL database using phpMyAdmin```
+#### 2) Loading data into MySQL database using phpMyAdmin
 ##### 2.1) Import the data in the file oltpdata.csv   
 > loading csv.files into database using phpMyAdmin  
 <img src="https://imgur.com/f5jrp5q.png" width = 600 height =300>
@@ -72,7 +72,7 @@ This project is sectioned into 6 parts:
 + set up a NoSQL database to store the catalog data for an E-Commerce website, load the E-Commerce catalog data into the NoSQL database, and query the E-Commerce catalog data in the NoSQL database.   
 ```Tools/Software: MongoDB Server, MongoDB Command Line Backup Tools ```
 
-#### 1) ```Working with MongoDB```  
+#### 1) Working with MongoDB  
 ##### 1.1) prepare the environment in linux terminal 
 > ```INPUT:``` *start mongo db*
 <img src="https://imgur.com/bXcP5jD.png">
@@ -112,7 +112,7 @@ This project is sectioned into 6 parts:
 
 + design the schema for a data warehouse based on the schema  of the OLTP and NoSQL databases. You’ll then create the schema and load the data into fact and dimension tables, automate the daily incremental data insertion into the data warehouse, and create Cubes and Rollups to make the reporting easier
 
-### B1) ```Design a Reporting Data Warehouse using ERD design tool ```  
+### B1) Design a Reporting Data Warehouse using ERD design tool  
 #### 1.1) Design the relationships of fact table(SoftcartFactSales) and dimension tables(DimDate, DimCategory, DimItem, DimCountry)
 <img src="https://imgur.com/xpt6rNG.png" height ="450" width ="600">
 
@@ -177,7 +177,7 @@ order by country asc;
 - you will create a Cognos data source that points to a data warehouse table, 
 + create a bar chart of Quarterly sales of cell phones, create a pie chart of sales of electronic, goods by category, and create a line chart of total sales per month for the year 2020.  
  
-#### 1) ```Load data into Data Warehouse```
+#### 1) Load data into Data Warehouse
 ##### 1.1) Import Data 
 <img src ="https://imgur.com/3bf4WX5.png">
 
